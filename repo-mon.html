@@ -1,0 +1,32 @@
+<html>
+<body>
+    <div align="center" style="font-size:300px">Your project name</div>
+    <div align="center" style="font-size:100px" id="message"></div>
+    <div align="center" style="height:100px" id="image"></div>
+    <script type="text/javascript">
+        var bad_color = "#FF0000";
+        var good_color = "#00FF00";
+
+        async function check_status() {
+            const github_response = await fetch("https://api.github.com/repos/your-org/you-repo/compare/your-branch...upstream-repo:upstream-branch?access_token=")
+            const github_json = await github_response.json();
+            const status = github_json.status;
+            const commit_diff_count = github_json.total_commits;
+
+            if(status === "identical") {
+                document.body.bgColor = good_color;
+                document.getElementById("message").innerHTML = "In sync with upstream";
+                document.getElementById("image").innerHTML = "<img src=\"Happy-Beaver.gif\">";
+            } else {
+                document.body.bgColor = bad_color;
+                document.getElementById("message").innerHTML =
+                    "Upstream is " + status + " by " + commit_diff_count + " commits";
+                document.getElementById("image").innerHTML = "";
+            }
+        }
+
+        check_status();
+        window.setInterval(check_status, 300000);
+    </script>
+</body>
+</html>
