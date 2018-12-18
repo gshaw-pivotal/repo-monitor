@@ -8,7 +8,7 @@
         var good_color = "#00FF00";
 
         async function check_status() {
-            const github_response = await fetch("https://api.github.com/repos/your-org/you-repo/compare/your-branch...upstream-repo:upstream-branch?access_token=")
+            const github_response = await fetch("https://api.github.com/repos/your-org/your-repo/compare/your-branch...upstream-repo:upstream-branch?access_token=")
             const github_json = await github_response.json();
             const status = github_json.status;
             const commit_diff_count = github_json.total_commits;
