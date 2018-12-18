@@ -11,7 +11,9 @@ Before deploying you will need to add your particular details to the repo-mon.ht
 `your-org/your-repo/compare/your-branch`
 
 where 'your-org' is replaced to specify your org as on Github
+
 where 'your-repo' is replaced to specify your repo which is the fork
+
 where 'your-branch' is replaced to specify the branch in your repo that is to be checked
 
 2. Specify the original repo from which you forked, replacing the following:
@@ -19,13 +21,22 @@ where 'your-branch' is replaced to specify the branch in your repo that is to be
 `upstream-repo:upstream-branch`
 
 where 'upstream-repo' is replaced to specify the name of the repo you forked from
+
 where 'upstream-branch' is replaced to specify the branch of the repo you forked from to be compared against
 
-3. Specify you Guthub API access token by adding it at the end:
+3. Specify you Github API access token by adding it at the end:
 
 `?access_token=`
 
-4. Give the monitor a code name to display be replacing:
+4. Specify the upstream org and repo so that the last commit's status can be checked:
+
+`upstream-org/upstream-repo`
+
+where 'upstream-org' is replaced to specify the name of the org which contains the repo you forked from
+
+where 'upstream-repo' is replaced to specify the name of the repo you forked from
+
+5. Give the monitor a code name to display be replacing:
 
 `<div align="center" style="font-size:300px">Your project name</div>`
 
@@ -40,6 +51,7 @@ Before deploying you will need to add your particular details to the pr-mon.html
 `upstream-org/upstream-repo`
 
 where 'upstream-org' is replaced to specify the org of the repo you want to monitor the PRs of
+
 where 'upstream-repo' is replaced to specify the name of the repo you want to monitor the PRs of
 
 2. Specify you Guthub API access token by adding it at the end:
