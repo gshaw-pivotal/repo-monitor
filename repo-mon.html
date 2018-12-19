@@ -15,8 +15,11 @@
         const status = github_compare_json.status;
         const commit_diff_count = github_compare_json.total_commits;
 
-        const upstream_sha = github_compare_json.base_commit.sha;
-        const github_build_response = await fetch("https://api.github.com/repos/upstream-org/upstream-repo/commits/" + upstream_sha + "/status?access_token=");
+        const github_branch_response = await fetch("https://api.github.com/repos/upstream-org/upstream-repo/branches/upstream-branch?access_token=")
+        const github_branch_json = await github_branch_response.json();
+        const branch_sha = github_branch_json.commit.sha;
+
+        const github_build_response = await fetch("https://api.github.com/repos/upstream-org/upstream-repo/commits/" + branch_sha + "/status?access_token=");
         const github_build_json = await github_build_response.json();
         const github_build_state = github_build_json.state;
 
