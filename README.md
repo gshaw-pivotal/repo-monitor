@@ -6,37 +6,47 @@
 
 Before deploying you will need to add your particular details to the repo-mon.html file.
 
-1. Specify your forked repo, replacing the following:
+1. Complete the compare request specifying your org, forked repo and branch and the upstream repo and branch:
 
-`your-org/your-repo/compare/your-branch`
+`https://api.github.com/repos/your-org/your-repo/compare/your-branch...upstream-repo:upstream-branch?access_token=`
 
 where 'your-org' is replaced to specify your org as on Github
 
 where 'your-repo' is replaced to specify your repo which is the fork
 
-where 'your-branch' is replaced to specify the branch in your repo that is to be checked
-
-2. Specify the original repo from which you forked, replacing the following:
-
-`upstream-repo:upstream-branch`
+where 'your-branch' is replaced to specify the branch in your repo that is to be compared
 
 where 'upstream-repo' is replaced to specify the name of the repo you forked from
 
-where 'upstream-branch' is replaced to specify the branch of the repo you forked from to be compared against
+where 'upstream-branch' is replaced to specify the name of the branch in the upstream repo to compare against
 
-3. Specify you Github API access token by adding it at the end:
+add you Github access token at the end of the request.
 
-`?access_token=`
+2. Complete the branch request to specify the upstream org, repo and branch you want the latest commit from:
 
-4. Specify the upstream org and repo so that the last commit's status can be checked:
+`https://api.github.com/repos/upstream-org/upstream-repo/branches/upstream-branch?access_token=`
 
-`upstream-org/upstream-repo`
-
-where 'upstream-org' is replaced to specify the name of the org which contains the repo you forked from
+where 'upstream-org' is replaced to specify the org containing the repo you forked from
 
 where 'upstream-repo' is replaced to specify the name of the repo you forked from
 
-5. Give the monitor a code name to display be replacing:
+where 'upstream-branch' is replaced to specify the name of the branch in the upstream repo to get the latest commit of
+
+add you Github access token at the end of the request.
+
+3. Complete the commits status request to specify the upstream org and repo containing the commit you want the status of:
+
+`https://api.github.com/repos/upstream-org/upstream-repo/commits/" + branch_sha + "/status?access_token=`
+
+where 'upstream-org' is replaced to specify the org containing the repo you forked from
+
+where 'upstream-repo' is replaced to specify the name of the repo you forked from
+
+where 'branch_sha' is a variable holding the sha of the commit whose status is being checked, it is populated by the previous request and does not need to be modify by a user
+
+add you Github access token at the end of the request.
+
+4. Give the monitor a code name to display be replacing:
 
 `<div align="center" style="font-size:300px">Your project name</div>`
 
@@ -46,21 +56,21 @@ replacing the text 'Your project name' with your code name
 
 Before deploying you will need to add your particular details to the pr-mon.html file.
 
-1. Specify the repo to monitor the status of PRs, by replacing the following:
+1. Complete the pulls merge endpoint request, by specifying the upstream org, repo and PR id:
 
-`upstream-org/upstream-repo`
+`https://api.github.com/repos/upstream-org/upstream-repo/pulls/" + pr_id + "/merge?access_token=`
 
 where 'upstream-org' is replaced to specify the org of the repo you want to monitor the PRs of
 
 where 'upstream-repo' is replaced to specify the name of the repo you want to monitor the PRs of
 
-2. Specify you Guthub API access token by adding it at the end:
+where 'pr_id' is a variable populated by a user define string array and is used to identify the PRs that a user cares about.
 
-`?access_token=`
+add you Github access token at the end of the request.
 
-3. Specify the ids of the PRs to be monitored:
+2. Specify the ids of the PRs to be monitored:
 
-This is done by adding the ids as strings to the array called 'pr_id_list'.
+This is done by adding the PR ids as strings to the array called 'pr_id_list'.
 
 ```
 //List of PR ids as strings
