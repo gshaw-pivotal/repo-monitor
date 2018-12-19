@@ -48,7 +48,8 @@
             document.body.bgColor = bad_color;
             document.getElementById("message").innerHTML =
                 "Upstream is " + status + " by " + commit_diff_count + " commits";
-            document.getElementById("image").innerHTML = "";
+            document.getElementById("extra").innerHTML = "Last commit on upstream has passed build checks, please sync";
+            document.getElementById("image").innerHTML = "<img src=\"Time-To-Work-Beaver.gif\">";
         }
 
         if(github_build_state === "success") {
@@ -56,7 +57,7 @@
         } else if(github_build_state === "failure") {
             document.body.bgColor = build_fail_color;
             document.getElementById("extra").innerHTML = "Last commit on upstream has failed build checks";
-            document.getElementById("image").innerHTML = "";
+            document.getElementById("image").innerHTML = "<img src=\"Check-Fail-Beaver.gif\">";
         } else if(github_build_state === "pending") {
             document.body.bgColor = build_fail_color;
             document.getElementById("extra").innerHTML = "Last commit on upstream currently being checked";
