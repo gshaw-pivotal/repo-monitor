@@ -61,7 +61,7 @@
             } else if(github_build_state === "pending") {
                 document.body.bgColor = build_check_in_progress_color;
                 document.getElementById("extra").innerHTML = "Last commit on upstream currently being checked";
-                document.getElementById("image").innerHTML = "";
+                document.getElementById("image").innerHTML = "<img src=\"Check-Pending-Beaver.gif\">";
             } else {
                 document.body.bgColor = build_check_fail_color;
                 document.getElementById("extra").innerHTML = "Last commit on upstream has unknown build check, verify before syncing";
