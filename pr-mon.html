@@ -21,9 +21,9 @@
                 pr_info+= await check_status(pr_id_list[index]);
             }
 
-            var merged_pr_percent = (merged_pr / total_pr) * 100;
-            var not_merged_pr_percent = (not_merged_pr / total_pr) * 100;
-            var unknown_pr_percent = (unknown_pr / total_pr) * 100;
+            var merged_pr_percent = ((merged_pr / total_pr) * 100).toFixed(2);
+            var not_merged_pr_percent = ((not_merged_pr / total_pr) * 100).toFixed(2);
+            var unknown_pr_percent = ((unknown_pr / total_pr) * 100).toFixed(2);
 
             document.getElementById("list").innerHTML =
                 "<table style=\"font-size:30px;border:2px solid black\">" +
