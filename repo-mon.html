@@ -45,23 +45,23 @@
             document.body.bgColor = good_color;
             document.getElementById("message").innerHTML = "In sync with upstream";
             document.getElementById("extra").innerHTML = "";
-            document.getElementById("image").innerHTML = "<img src=\"Happy-Beaver.gif\">";
+            document.getElementById("image").innerHTML = "<img src=\"images/Happy-Beaver.gif\">";
         } else {
             document.body.bgColor = bad_color;
             document.getElementById("message").innerHTML = "Upstream is " + status + " by " + commit_diff_count + " commits";
             document.getElementById("extra").innerHTML = "Last commit on upstream passed build checks, please sync";
-            document.getElementById("image").innerHTML = "<img src=\"Time-To-Work-Beaver.gif\">";
+            document.getElementById("image").innerHTML = "<img src=\"images/Time-To-Work-Beaver.gif\">";
         }
 
         if(github_build_state !== "success") {
             if(github_build_state === "failure") {
                 document.body.bgColor = build_check_fail_color;
                 document.getElementById("extra").innerHTML = "Last commit on upstream failed build checks";
-                document.getElementById("image").innerHTML = "<img src=\"Check-Fail-Beaver.gif\">";
+                document.getElementById("image").innerHTML = "<img src=\"images/Check-Fail-Beaver.gif\">";
             } else if(github_build_state === "pending") {
                 document.body.bgColor = build_check_in_progress_color;
                 document.getElementById("extra").innerHTML = "Last commit on upstream currently being checked";
-                document.getElementById("image").innerHTML = "<img src=\"Check-Pending-Beaver.gif\">";
+                document.getElementById("image").innerHTML = "<img src=\"images/Check-Pending-Beaver.gif\">";
             } else {
                 document.body.bgColor = build_check_fail_color;
                 document.getElementById("extra").innerHTML = "Last commit on upstream has unknown build check, verify before syncing";
