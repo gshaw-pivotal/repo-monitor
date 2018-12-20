@@ -6,47 +6,23 @@
 
 Before deploying you will need to add your particular details to the repo-mon.html file.
 
-1. Complete the compare request specifying your org, forked repo and branch and the upstream repo and branch:
+1. Set the following constants:
 
-`https://api.github.com/repos/your-org/your-repo/compare/your-branch...upstream-repo:upstream-branch?access_token=`
+`your_org` is set to specify your org as on Github
 
-where 'your-org' is replaced to specify your org as on Github
+`your_repo` is set to specify your repo which is the fork
 
-where 'your-repo' is replaced to specify your repo which is the fork
+`your_branch` is set to specify the branch in your repo that is to be compared
 
-where 'your-branch' is replaced to specify the branch in your repo that is to be compared
+`upstream_org` is set to specify the name of the repo you forked from
 
-where 'upstream-repo' is replaced to specify the name of the repo you forked from
+`upstream_repo` is set to specify the name of the repo you forked from
 
-where 'upstream-branch' is replaced to specify the name of the branch in the upstream repo to compare against
+`upstream_branch` is set to specify the name of the branch in the upstream repo to compare against
 
-add you Github access token at the end of the request.
+`access_token` is set to your Github access token
 
-2. Complete the branch request to specify the upstream org, repo and branch you want the latest commit from:
-
-`https://api.github.com/repos/upstream-org/upstream-repo/branches/upstream-branch?access_token=`
-
-where 'upstream-org' is replaced to specify the org containing the repo you forked from
-
-where 'upstream-repo' is replaced to specify the name of the repo you forked from
-
-where 'upstream-branch' is replaced to specify the name of the branch in the upstream repo to get the latest commit of
-
-add you Github access token at the end of the request.
-
-3. Complete the commits status request to specify the upstream org and repo containing the commit you want the status of:
-
-`https://api.github.com/repos/upstream-org/upstream-repo/commits/" + branch_sha + "/status?access_token=`
-
-where 'upstream-org' is replaced to specify the org containing the repo you forked from
-
-where 'upstream-repo' is replaced to specify the name of the repo you forked from
-
-where 'branch_sha' is a variable holding the sha of the commit whose status is being checked, it is populated by the previous request and does not need to be modify by a user
-
-add you Github access token at the end of the request.
-
-4. Give the monitor a code name to display be replacing:
+2. Give the monitor a code name to display be replacing:
 
 `<div align="center" style="font-size:300px">Your project name</div>`
 
