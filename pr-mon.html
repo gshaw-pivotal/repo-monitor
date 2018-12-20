@@ -3,6 +3,11 @@
     <div align="center" style="font-size:100px">PR Tracking</div>
     <div align="center" style="font-size:30px" id="list"></div>
     <script type="text/javascript">
+        const upstream_org = "";
+        const upstream_repo = "";
+
+        const access_token = "";
+
         //List of PR ids as strings
         const pr_id_list = [''];
         var total_pr = pr_id_list.length;
@@ -48,7 +53,9 @@
         }
 
         async function check_status(pr_id) {
-            const github_response = await fetch("https://api.github.com/repos/upstream-org/upstream-repo/pulls/" + pr_id + "/merge?access_token=")
+            const github_response = await fetch("https://api.github.com/repos/"
+                                                + upstream_org + "/" + upstream_repo + "/pulls/" + pr_id +
+                                                "/merge?access_token=" + access_token)
             const github_status = await github_response.status;
 
             if (github_status === 204) {

@@ -14,7 +14,7 @@ Before deploying you will need to add your particular details to the repo-mon.ht
 
 `your_branch` is set to specify the branch in your repo that is to be compared
 
-`upstream_org` is set to specify the name of the repo you forked from
+`upstream_org` is set to specify the name of the org you forked the repo from
 
 `upstream_repo` is set to specify the name of the repo you forked from
 
@@ -32,17 +32,13 @@ replacing the text 'Your project name' with your code name
 
 Before deploying you will need to add your particular details to the pr-mon.html file.
 
-1. Complete the pulls merge endpoint request, by specifying the upstream org, repo and PR id:
+1. Set the following constants:
 
-`https://api.github.com/repos/upstream-org/upstream-repo/pulls/" + pr_id + "/merge?access_token=`
+`upstream_org` is set to specify the name of the org you forked the repo from
 
-where 'upstream-org' is replaced to specify the org of the repo you want to monitor the PRs of
+`upstream_repo` is set to specify the name of the repo you forked from
 
-where 'upstream-repo' is replaced to specify the name of the repo you want to monitor the PRs of
-
-where 'pr_id' is a variable populated by a user define string array and is used to identify the PRs that a user cares about.
-
-add you Github access token at the end of the request.
+`access_token` is set to your Github access token
 
 2. Specify the ids of the PRs to be monitored:
 
