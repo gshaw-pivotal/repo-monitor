@@ -14,6 +14,7 @@
     const upstream_branch = "";
 
     const access_token = "";
+    const update_interval = 60000;
 
     var bad_color = "#FF0000";
     var good_color = "#00FF00";
@@ -71,7 +72,7 @@
     }
 
     check_status();
-    window.setInterval(check_status, 60000);
+    window.setInterval(check_status, update_interval);
 </script>
 </body>
 </html>

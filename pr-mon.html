@@ -7,6 +7,7 @@
         const upstream_repo = "";
 
         const access_token = "";
+        const update_interval = 60000;
 
         //List of PR ids as strings
         const pr_id_list = [''];
@@ -85,7 +86,7 @@
         }
 
         update_pr();
-        window.setInterval(update_pr, 60000);
+        window.setInterval(update_pr, update_interval);
     </script>
 </body>
 </html>
