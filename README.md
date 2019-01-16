@@ -22,6 +22,8 @@ Before deploying you will need to add your particular details to the repo-mon.ht
 
 `access_token` is set to your Github access token
 
+`update_interval` specifies how often (in milliseconds) the page rechecks with GitHub to keep up to date, with `60000` (1 minute) being the default provided
+
 2. Give the monitor a code name to display be replacing:
 
 `<div align="center" style="font-size:300px">Your project name</div>`
@@ -39,6 +41,8 @@ Before deploying you will need to add your particular details to the pr-mon.html
 `upstream_repo` is set to specify the name of the repo you forked from
 
 `access_token` is set to your Github access token
+
+`update_interval` specifies how often (in milliseconds) the page rechecks with GitHub to keep up to date, with `60000` (1 minute) being the default provided
 
 2. Specify the ids of the PRs to be monitored:
 
