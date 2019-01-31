@@ -53,6 +53,19 @@ This is done by adding the PR ids as strings to the array called 'pr_id_list'.
 const pr_id_list = [''];
 ```
 
+## Basic Authentication
+
+To secure to pages served by the app, include a `Staticfile.auth` when deploying to cloudfoundry. The file will contain username and hashed password pairs, which are used to determine if a client should be granted access to the resource.
+
+A `Staticfile.auth` contents will be structed as follows:
+
+```
+USERNAME1:HASHED_PASSWORD
+USERNAME2:HASHED_PASSWORD
+```
+
+You can use [Htpasswd Generater]([http://www.htaccesstools.com/htpasswd-generator/) to generate the hashed version of the password(s). Do not include plain text passwords in the `Staticfile.auth`.
+
 ## Deploying
 
 This monitor can be deployed to cloudfoundry as a static application using the static buildpack. This an be achieved with the following command issued in the root directory of this repo:
