@@ -64,7 +64,7 @@ USERNAME1:HASHED_PASSWORD
 USERNAME2:HASHED_PASSWORD
 ```
 
-You can use [Htpasswd Generater]([http://www.htaccesstools.com/htpasswd-generator/) to generate the hashed version of the password(s). Do not include plain text passwords in the `Staticfile.auth`.
+You can use [Htpasswd Generater](http://www.htaccesstools.com/htpasswd-generator/) to generate the hashed version of the password(s). Do not include plain text passwords in the `Staticfile.auth`.
 
 ## Deploying
 
